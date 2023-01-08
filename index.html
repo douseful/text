@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线去除换行</title>
+</head>
+<style>
+    textarea {
+        font-size: 20px;
+        display: block;
+        width: 100%;
+        height: 300px;
+    }
+    #btn {
+        font-size: 20px;
+        display: block;
+        margin-left: 50%;
+        height: 50px;
+    }
+</style>
+<body>
+    <textarea name="origin_text" id="origin_text"></textarea>
+    
+    <button id="btn">处理</button>
+    <textarea name="result" id="result" ></textarea>
+
+
+    <script>
+        
+        <!-- 获取btn的按钮 -->
+        let btn = document.querySelector('#btn');
+        // 获取result的文本框
+        let result = document.querySelector('#result');
+        //给btn按钮添加点击事件 -->
+        btn.addEventListener('click', function () {
+            //获取origin_text的文本框的值
+            let origin_text = document.querySelector('#origin_text').value;
+            // 将origin_text的文本框的值中的换行符替换为空格
+            origin_text = origin_text.replace(/\n/g, ' ');
+            //将origin_text的文本框的值赋值给result的文本框 -->
+            result.value = origin_text;
+        })
+ 
+
+    </script>
+    
+</body>
+</html>
