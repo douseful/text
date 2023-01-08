@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>在线去除换行</title>
 </head>
 <style>
@@ -24,6 +25,7 @@
         margin-top: 20px;
     }
     #btn {
+        margin: 5px 0;
         font-size: 20px;
         height: 50px;
     }
@@ -57,6 +59,8 @@
             let origin_text = document.querySelector('#origin_text').value;
             // 将origin_text的文本框的值中的换行符替换为空格
             origin_text = origin_text.replace(/\n/g, ' ');
+            origin_text = origin_text.replace(/- /g, '');
+
             //将origin_text的文本框的值赋值给result的文本框 -->
             result.value = origin_text;
         })
