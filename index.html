@@ -7,20 +7,38 @@
     <title>在线去除换行</title>
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
     textarea {
+        font-family: '微软雅黑';
+
         font-size: 20px;
         display: block;
-        width: 100%;
+        width: 90%;
         height: 300px;
+        margin-left: 5%;
+        outline:none;
+    }
+    #origin_text {
+        margin-top: 20px;
     }
     #btn {
+        margin: 10px auto;
         font-size: 20px;
         display: block;
         margin-left: 50%;
+        
         height: 50px;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 20px;
     }
 </style>
 <body>
+    <h1>在线去除换行</h1>
     <textarea name="origin_text" id="origin_text"></textarea>
     
     <button id="btn">处理</button>
