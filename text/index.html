@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>在线去除换行</title>
+  </head>
+// test
+  <body>
+    <div class="font-serif flex text-3xl m-4 justify-center h-auto">Replace the line break with white space.</div>
+
+    <div class="flex space-x-2 justify-center m-4 " >
+        <textarea name="origin_text" id="origin_text" class="shadow-inner border-blue-500 justify-center h-60 w-4/5 rounded-lg border border-solid focus:outline-none resize-none"></textarea>
+    </div>
+//test
+    <div class="flex space-x-2 justify-center m-4">
+        <button type="button" class="ease-in-out transition transform bg-blue-500 hover:bg-blue-700 hover:-translate-y-1 hover:scale-110 text-white font-bold py-2 px-4 border border-blue-700 rounded" id="btn">处理</button>
+    </div>
+
+    <div class="flex space-x-2 justify-center m-4 ">
+        <textarea name="result" id="result" class="select-all border-blue-500 justify-center shadow-inner h-60 w-4/5 rounded border border-solid focus:outline-none resize-none"></textarea>
+    </div>
+
+    
+
+    <script>
+      <!-- 获取btn的按钮 -->
+      let btn = document.querySelector("#btn");
+      // 获取result的文本框
+      let result = document.querySelector("#result");
+      //给btn按钮添加点击事件 -->
+      btn.addEventListener("click", function () {
+        //获取origin_text的文本框的值
+        let origin_text = document.querySelector("#origin_text").value;
+        // 将origin_text的文本框的值中的换行符替换为空格
+        origin_text = origin_text.replace(/\n/g, " ");
+        origin_text = origin_text.replace(/- /g, "");
+
+        //将origin_text的文本框的值赋值给result的文本框 -->
+        result.value = origin_text;
+      });
+    </script>
+  </body>
+</html>
